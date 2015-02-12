@@ -1,0 +1,23 @@
+{
+  "name": "ka-interview",
+  "version": "0.0.0",
+  "authors": [
+    "omniaura <omniaura5@gmail.com>"
+  ],
+  "description": "Khan Academy project interview",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ace": "~1.1.8",
+    "angularjs": "~1.3.13",
+    "foundation": "~5.5.1"
+  }
+}
