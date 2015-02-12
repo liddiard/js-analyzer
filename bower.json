@@ -16,8 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "ace": "~1.1.8",
-    "angularjs": "~1.3.13",
-    "foundation": "~5.5.1"
+    "foundation": "~5.5.1",
+    "angular-ui-ace": "bower"
   }
 }
