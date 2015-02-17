@@ -32,7 +32,7 @@
                     <select multiple
                         ng-model="whitelist"
                         ng-options="option.type as option.name group by option.category
-                                    for option in nodeObjects">
+                                    for option in nodeObjects | filter:notInBlacklist">
                     </select>
                 </div>
 
@@ -41,7 +41,7 @@
                     <select multiple
                         ng-model="blacklist"
                         ng-options="option.type as option.name group by option.category
-                                    for option in nodeObjects">
+                                    for option in nodeObjects | filter:notInWhitelist">
                     </select>
                 </div>
 

@@ -36,4 +36,13 @@ app.controller('ChallengeController', ['$scope', '$http', function($scope, $http
 
     $scope.whitelist = [];
     $scope.blacklist = [];
+
+    $scope.notInBlacklist = function(item) {
+        return ($scope.blacklist.indexOf(item.type) === -1);
+    };
+    
+    $scope.notInWhitelist = function(item) {
+        return ($scope.whitelist.indexOf(item.type) === -1);
+    };
+
 }]);
