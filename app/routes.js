@@ -1,4 +1,5 @@
 var path = require('path');
+var acorn = require('acorn');
 
 module.exports = function(app) {
 
@@ -6,18 +7,19 @@ module.exports = function(app) {
     // handle things like api calls
     // authentication routes
 
-    // sample api route
-    app.get('/api/eval', function(req, res) {
-        // use mongoose to get all nerds in the database
-        Repo.find(function(err, repos) {
+    // evaluate JavaScript text
+    app.post('/api/eval', function(req, res) {
+        var requestBody = req.body;
 
-            // if there is an error retrieving, send the error.
-            // nothing after res.send(err) will execute
-            if (err)
-                res.send(err);
+        var evalType = requestBody.evalType; // valid types: whitelist, blacklist, structure
+        var criteria = requestBody.criteria;
+        var editorText = requestBody.editorText;
 
-            res.json(repos); // return all nerds in JSON format
-        });
+        var parsedText = acorn.parse(editorText);
+
+        console.log(parsedText.body[0].type);
+
+        res.json({lorem: 'ipsum'});
     });
 
     // route to handle creating goes here (app.post)
