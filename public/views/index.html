@@ -10,6 +10,7 @@
         <!-- CSS -->
         <link href="lib/foundation/css/normalize.css" rel="stylesheet" type="text/css"/>
         <link href="lib/foundation/css/foundation.css" rel="stylesheet" type="text/css"/>
+        <link href="css/app.css" rel="stylesheet" type="text/css"/>
 
         <!-- JavaScript -->
         <script type="text/javascript" src="lib/ace-builds/src-min-noconflict/ace.js"></script>
@@ -18,10 +19,14 @@
         <script src="js/app.js"></script>
     </head>
     <body>
-        <header></header>
-        <main ng-controller="EditorController">
-            <h1>{{greeting}}</h1>
-            <div ui-ace></div>
+        <main class="row" ng-controller="EditorController">
+            <div class="small-12 large-8 columns">
+                <h1>JavaScript Challenge</h1>
+                <div ng-model="editorText" ui-ace="{onLoad: aceLoaded, mode:'javascript'}"></div>
+            </div>
+            <div class="small-12 large-4 columns">
+                <h2>Code analysis</h2>
+            </div>
         </main>
         <footer></footer>
     </body>
