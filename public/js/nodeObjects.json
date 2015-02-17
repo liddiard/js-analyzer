@@ -175,11 +175,6 @@
         "name": "array"
     },
     {
-        "category": "pattern",
-        "type": "ObjectPattern",
-        "name": "object"
-    },
-    {
         "category": "clause",
         "type": "SwitchCase",
         "name": "switch"
