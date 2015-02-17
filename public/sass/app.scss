@@ -2,6 +2,10 @@ optgroup {
     margin-bottom: 0.6em;
 }
 
+select[multiple] {
+    background-image: none;
+}
+
 .ace_editor {
     height: 500px;
     border: 1px solid lightgray;
