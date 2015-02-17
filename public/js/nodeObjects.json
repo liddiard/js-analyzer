@@ -1,0 +1,227 @@
+[
+    {
+        "category": "statement",
+        "type": "EmptyStatement",
+        "name": "empty"
+    },
+    {
+        "category": "statement",
+        "type": "BlockStatement",
+        "name": "block"
+    },
+    {
+        "category": "statement",
+        "type": "IfStatement",
+        "name": "if"
+    },
+    {
+        "category": "statement",
+        "type": "LabledStatement",
+        "name": "labled"
+    },
+    {
+        "category": "statement",
+        "type": "ContinueStatement",
+        "name": "continue"
+    },
+    {
+        "category": "statement",
+        "type": "WithStatement",
+        "name": "with"
+    },
+    {
+        "category": "statement",
+        "type": "SwitchStatement",
+        "name": "switch"
+    },
+    {
+        "category": "statement",
+        "type": "ReturnStatement",
+        "name": "return"
+    },
+    {
+        "category": "statement",
+        "type": "ThrowStatement",
+        "name": "throw"
+    },
+    {
+        "category": "statement",
+        "type": "TryStatement",
+        "name": "try"
+    },
+    {
+        "category": "statement",
+        "type": "WhileStatement",
+        "name": "while"
+    },
+    {
+        "category": "statement",
+        "type": "DoWhileStatement",
+        "name": "do/while"
+    },
+    {
+        "category": "statement",
+        "type": "ForStatement",
+        "name": "for"
+    },
+    {
+        "category": "statement",
+        "type": "ForInStatement",
+        "name": "for/in"
+    },
+    {
+        "category": "statement",
+        "type": "ForOfStatement",
+        "name": "for/of"
+    },
+    {
+        "category": "statement",
+        "type": "LetStatement",
+        "name": "let"
+    },
+    {
+        "category": "declaration",
+        "type": "FunctionDeclaration",
+        "name": "function"
+    },
+    {
+        "category": "declaration",
+        "type": "VariableDeclaration",
+        "name": "variable"
+    },
+    {
+        "category": "declaration",
+        "type": "VariableDeclarator",
+        "name": "variable declarator"
+    },
+    {
+        "category": "expression",
+        "type": "ThisExpression",
+        "name": "this"
+    },
+    {
+        "category": "expression",
+        "type": "ArrayExpression",
+        "name": "array"
+    },
+    {
+        "category": "expression",
+        "type": "ObjectExpression",
+        "name": "object"
+    },
+    {
+        "category": "expression",
+        "type": "FunctionExpression",
+        "name": "function"
+    },
+    {
+        "category": "expression",
+        "type": "ArrowExpression",
+        "name": "arrow"
+    },
+    {
+        "category": "expression",
+        "type": "SequenceExpression",
+        "name": "sequence"
+    },
+    {
+        "category": "expression",
+        "type": "UnaryExpression",
+        "name": "unary"
+    },
+    {
+        "category": "expression",
+        "type": "BinaryExpression",
+        "name": "binary"
+    },
+    {
+        "category": "expression",
+        "type": "AssignmentExpression",
+        "name": "assignment"
+    },
+    {
+        "category": "expression",
+        "type": "UpdateExpression",
+        "name": "update"
+    },
+    {
+        "category": "expression",
+        "type": "LogicalExpression",
+        "name": "logical"
+    },
+    {
+        "category": "expression",
+        "type": "ConditionalExpression",
+        "name": "conditional"
+    },
+    {
+        "category": "expression",
+        "type": "NewExpression",
+        "name": "new"
+    },
+    {
+        "category": "expression",
+        "type": "CallExpression",
+        "name": "call"
+    },
+    {
+        "category": "pattern",
+        "type": "ObjectPattern",
+        "name": "object"
+    },
+    {
+        "category": "pattern",
+        "type": "ArrayPattern",
+        "name": "array"
+    },
+    {
+        "category": "pattern",
+        "type": "ObjectPattern",
+        "name": "object"
+    },
+    {
+        "category": "clause",
+        "type": "SwitchCase",
+        "name": "switch"
+    },
+    {
+        "category": "clause",
+        "type": "CatchClause",
+        "name": "catch"
+    },
+    {
+        "category": "miscellaneous",
+        "type": "Identifier",
+        "name": "identifier"
+    },
+    {
+        "category": "miscellaneous",
+        "type": "Literal",
+        "name": "literal"
+    },
+    {
+        "category": "miscellaneous",
+        "type": "UnaryOperator",
+        "name": "unary operator"
+    },
+    {
+        "category": "miscellaneous",
+        "type": "BinaryOperator",
+        "name": "binary operator"
+    },
+    {
+        "category": "miscellaneous",
+        "type": "LogicalOperator",
+        "name": "logical operator"
+    },
+    {
+        "category": "miscellaneous",
+        "type": "AssignmentOperator",
+        "name": "assignment operator"
+    },
+    {
+        "category": "miscellaneous",
+        "type": "UpdateOperator",
+        "name": "update operator"
+    }
+]

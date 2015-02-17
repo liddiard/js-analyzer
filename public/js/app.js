@@ -27,3 +27,13 @@ app.controller('EditorController', ['$scope', '$http', function($scope, $http) {
         }
     )
 }]);
+
+app.controller('ChallengeController', ['$scope', '$http', function($scope, $http) {
+    $scope.nodeObjects = [];
+    $http.get('/js/nodeObjects.json').success(function(data) {
+        $scope.nodeObjects = data;
+    });
+
+    $scope.whitelist = [];
+    $scope.blacklist = [];
+}]);
