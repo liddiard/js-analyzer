@@ -20,7 +20,6 @@ app.controller('EditorController', ['$scope', '$http', function($scope, $http) {
             blacklist: $scope.blacklist,
             structure: $scope.structure
         };
-        console.log($scope.whitelist);
         if (this.timeoutId)
             window.clearTimeout(this.timeoutId);
         this.timeoutId = window.setTimeout(function(){
