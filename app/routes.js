@@ -1,5 +1,6 @@
 var path = require('path');
 var acorn = require('acorn');
+var walk = require('walk-ast');
 
 module.exports = function(app) {
 
@@ -16,7 +17,25 @@ module.exports = function(app) {
         var blacklist = requestBody.blacklist;
         var structure = requestBody.structure;
 
-        var parsedText = acorn.parse(editorText);
+        var errors = {
+            syntax: "",
+            whitelist: [],
+            blacklist: [],
+            structure: []
+        };
+
+        try {
+            var parsedText = acorn.parse(editorText);
+        }
+        catch (ex) {
+            errors.syntax = ex.message;
+            res.json(errors);
+            return;
+        }
+
+        walk(parsedText, function(node) {
+            console.log(node.type);
+        });
 
         res.json(whitelist);
     });
