@@ -45,8 +45,56 @@
                     </select>
                 </div>
 
-                <div class="criterion">
+                <div class="structure criterion">
                     <h3>Program Structure</h3>
+                    <ul ng-show="structure.length" class="no-bullet">
+                        <li ng-repeat="alternative in structure | filter:alternative.length">
+                            <div class="alternative" ng-init="outerIndex = $index">
+                                <div ng-repeat="node in alternative">
+                                    <select ng-model="node.type"
+                                            ng-options="option.type as option.name group by
+                                                        option.category for option in nodeObjects">
+                                        <option value=""></option>
+                                    </select>
+                                    <span ng-click="removeNode(alternative, $index, outerIndex)" class="remove">&#10005;</span>
+                                    <ul ng-if="node.child">
+                                        <li>
+                                            <select ng-model="node.child.type"
+                                                    ng-options="option.type as option.name group by
+                                                                option.category for option in nodeObjects">
+                                                <option value=""></option>
+                                            </select>
+                                            <span ng-click="removeChild(node)" class="remove">&#10005;</span>
+                                        </li>
+                                    </ul>
+                                    <span ng-if="$last"
+                                          ng-click="pushNode(outerIndex)"
+                                          class="btn add-node"
+                                          title="Add a new line of code to check for following the previous line">
+                                        + add node
+                                    </span>
+                                    <span ng-if="!node.child"
+                                          ng-click="addChild(node)"
+                                          class="btn add-child"
+                                          title="Add a node to check for inside the parent (may not be applicable to all node types)">
+                                        + add child
+                                    </span>
+                                </div>
+                            </div>
+                            <span ng-if="!$last" class="conjunction">or</span>
+                        </li>
+                    </ul>
+                    <span ng-show="!structure.length"
+                          ng-click="pushStructure()"
+                          class="btn add-structure">
+                        + add structure rule
+                    </span>
+                    <span ng-show="structure.length"
+                          ng-click="pushStructure()"
+                          class="btn add-structure"
+                          title="Add an alternative acceptable answer for the program structure">
+                        + add an alternative
+                    </span>
                 </div>
 
             </aside>
