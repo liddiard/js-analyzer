@@ -11,15 +11,14 @@ module.exports = function(app) {
     app.post('/api/eval', function(req, res) {
         var requestBody = req.body;
 
-        var evalType = requestBody.evalType; // valid types: whitelist, blacklist, structure
-        var criteria = requestBody.criteria;
         var editorText = requestBody.editorText;
+        var whitelist = requestBody.whitelist;
+        var blacklist = requestBody.blacklist;
+        var structure = requestBody.structure;
 
         var parsedText = acorn.parse(editorText);
 
-        console.log(parsedText.body[0].type);
-
-        res.json({lorem: 'ipsum'});
+        res.json(whitelist);
     });
 
     // route to handle creating goes here (app.post)

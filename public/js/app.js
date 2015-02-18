@@ -1,5 +1,11 @@
 var app = angular.module('JsAnalyzer', ['ui.ace']);
 
+app.controller('ChallengeController', ['$scope', function($scope) {
+    $scope.whitelist = [];
+    $scope.blacklist = [];
+    $scope.structure = [];
+}]);
+
 app.controller('EditorController', ['$scope', '$http', function($scope, $http) {
     $scope.editorText = "";
 
@@ -8,10 +14,17 @@ app.controller('EditorController', ['$scope', '$http', function($scope, $http) {
     };
 
     $scope.evaluate = function() {
+        var payload = {
+            editorText: $scope.editorText,
+            whitelist: $scope.whitelist,
+            blacklist: $scope.blacklist,
+            structure: $scope.structure
+        };
+        console.log($scope.whitelist);
         if (this.timeoutId)
             window.clearTimeout(this.timeoutId);
         this.timeoutId = window.setTimeout(function(){
-            $http.post('/api/eval/', {editorText: $scope.editorText})
+            $http.post('/api/eval/', payload)
                 .success(function(data){
                     console.log(data);
                 }
@@ -29,15 +42,11 @@ app.controller('EditorController', ['$scope', '$http', function($scope, $http) {
     )
 }]);
 
-app.controller('ChallengeController', ['$scope', '$http', function($scope, $http) {
+app.controller('TestingController', ['$scope', '$http', function($scope, $http) {
     $scope.nodeObjects = [];
     $http.get('/js/nodeObjects.json').success(function(data) {
         $scope.nodeObjects = data;
     });
-
-    $scope.whitelist = [];
-    $scope.blacklist = [];
-    $scope.structure = [];
 
     $scope.notInBlacklist = function(item) {
         return ($scope.blacklist.indexOf(item.type) === -1);
@@ -59,7 +68,6 @@ app.controller('ChallengeController', ['$scope', '$http', function($scope, $http
 
     $scope.removeNode = function(alternative, index, outerIndex) {
         alternative.splice(index, 1);
-        console.log(outerIndex);
         if (!alternative.length)
             $scope.structure.splice(outerIndex, 1); // if the alternative is empty, remove it
     };
