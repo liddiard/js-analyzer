@@ -54,7 +54,6 @@
                                     <select ng-model="node.type"
                                             ng-options="option.type as option.name group by
                                                         option.category for option in nodeObjects">
-                                        <option value=""></option>
                                     </select>
                                     <span ng-click="removeNode(alternative, $index, outerIndex)" class="remove">&#10005;</span>
                                     <ul ng-if="node.child">
@@ -62,7 +61,6 @@
                                             <select ng-model="node.child.type"
                                                     ng-options="option.type as option.name group by
                                                                 option.category for option in nodeObjects">
-                                                <option value=""></option>
                                             </select>
                                             <span ng-click="removeChild(node)" class="remove">&#10005;</span>
                                         </li>
