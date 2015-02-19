@@ -1,3 +1,5 @@
+$KHAN_GREEN: #94be32;
+
 optgroup {
     margin-bottom: 0.6em;
 }
@@ -8,7 +10,7 @@ select[multiple] {
 
 .ace_editor {
     height: 400px;
-    border: 1px solid lightgray;
+    border: 1px solid $KHAN_GREEN;
 }
 
 .info {
@@ -45,11 +47,15 @@ aside {
             }
 
             .btn {
-                color: gray;
+                color: $KHAN_GREEN - #222;
                 font-weight: bold;
                 text-transform: uppercase;
                 font-size: 0.8em;
                 cursor: pointer;
+
+                &:hover {
+                    color: $KHAN_GREEN - #444;
+                }
 
                 &.add-structure, &.add-node {
                     float: left;
@@ -72,7 +78,7 @@ aside {
             .alternative {
                 overflow: hidden; // contain floated elements
                 position: relative;
-                border: 1px solid lightgray;
+                border: 1px solid $KHAN_GREEN;
                 padding: 1em;
                 margin: 0.5em 0;
                 width: ($select-width*2) + $criterion-margin-right;
@@ -83,6 +89,10 @@ aside {
                 padding: 0.25em;
                 color: gray;
                 cursor: pointer;
+
+                &:hover {
+                    color: #b00;
+                }
             }
         }
     }
