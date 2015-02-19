@@ -1,14 +1,12 @@
 var path = require('path');
 var acorn = require('acorn');
-var walk = require('walk-ast');
+var validation = require('./codeValidation')
 
 module.exports = function(app) {
 
     // server routes ===========================================================
-    // handle things like api calls
-    // authentication routes
 
-    // evaluate JavaScript text
+    // evaluate JavaScript editor text
     app.post('/api/eval', function(req, res) {
         var requestBody = req.body;
 
@@ -21,7 +19,7 @@ module.exports = function(app) {
             syntax: "",
             whitelist: [],
             blacklist: [],
-            structure: []
+            structure: {}
         };
 
         try {
@@ -33,15 +31,26 @@ module.exports = function(app) {
             return;
         }
 
-        walk(parsedText, function(node) {
-            console.log(node.type);
-        });
+        /* check for whitelist errors */
+        for (var i = 0; i < whitelist.length; i++) {
+            if (!validation.astContains(parsedText, whitelist[i]))
+                errors.whitelist.push(whitelist[i]);
+        }
 
-        res.json(whitelist);
+        /* check for blacklist errors */
+        for (var i = 0; i < blacklist.length; i++) {
+            if (validation.astContains(parsedText, blacklist[i])) {
+                errors.blacklist.push(blacklist[i]);
+            }
+        }
+
+        /* check for structural errors */
+        errors.structure = validation.validateStructure(parsedText, structure);
+
+        res.json(errors);
+
     });
 
-    // route to handle creating goes here (app.post)
-    // route to handle delete goes here (app.delete)
 
     // frontend routes =========================================================
     // route to handle all angular requests
