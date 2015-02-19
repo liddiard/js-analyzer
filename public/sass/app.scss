@@ -8,6 +8,25 @@ select[multiple] {
     background-image: none;
 }
 
+.error {
+    color: #b00;
+}
+
+.success {
+    color: $KHAN_GREEN;
+}
+
+.evaluating {
+    color: gray;
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+.feedback {
+    line-height: 1.2;
+    margin-top: 0.5em;
+}
+
 .ace_editor {
     height: 400px;
     border: 1px solid $KHAN_GREEN;

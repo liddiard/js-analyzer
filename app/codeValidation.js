@@ -11,6 +11,7 @@ exports.validateStructure = function(ast, structure) {
 // checks if an AST's structure is valid based on different structural options.
 // returns an error object with info on structural errors or an empty object
 // if there are no errors.
+    var errors = {};
 
     for (var i = 0; i < structure.length; i++) { // for each alternative
 

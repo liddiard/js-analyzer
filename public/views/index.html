@@ -23,6 +23,11 @@
             <main ng-controller="EditorController" class="small-12 large-7 columns">
                 <h1>JavaScript Challenge</h1>
                 <div ng-model="editorText" ui-ace="{onLoad: aceLoaded, mode:'javascript'}"></div>
+                <span ng-show="evaluating" class="evaluating">evaluating&hellip;</span>
+                <p class="feedback"
+                   ng-class="{success: !feedbackErrors(), error: feedbackErrors()}">
+                    {{getFeedback()}}
+                </p>
             </main>
             <aside ng-controller="TestingController" class="small-12 large-5 columns">
                 <h2>Code analysis</h2>
