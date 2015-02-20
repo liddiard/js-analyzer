@@ -35,7 +35,7 @@ problem persists. The display issue is not present in other browsers.
 
 ---------------------------------------
 
-* When deciding among libraries to use, I typically look at documentation,
+\* When deciding among libraries to use, I typically look at documentation,
 development activity, and performance. Both Esprima and Acorn had adequate but
 not great documentation and are both under active development. According
 to the test I ran on [Esprima's testing page](http://esprima.org/test/compare.html),
