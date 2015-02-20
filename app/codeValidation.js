@@ -35,7 +35,7 @@ exports.validateStructure = function(ast, structure) {
             }
 
             if (alternative[j].child) { // this alternative has a child node
-                var childNode = walk.findNodeAt(ast, node.node.start, node.node.end, alternative[j].child.type);
+                var childNode = walk.findNodeAt(node.node, null, null, alternative[j].child.type);
                 if (typeof childNode !== 'undefined')
                     cur = childNode.node.end;
                 else { // child node NOT found
