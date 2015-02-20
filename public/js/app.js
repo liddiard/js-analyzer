@@ -65,7 +65,7 @@ app.controller('EditorController', ['$scope', '$http', function($scope, $http) {
         if (!$scope.feedbackErrors())
             return "Success! You passed all the tests!";
         if (e.syntax.length)
-            return "It looks like there's a problem with your syntax. Here's the error: "
+            return "There's an error with your syntax: "
                     + e.syntax;
         if (e.whitelist.length)
             return "You must use a " + $scope.prettyPrint(e.whitelist[0]) + ".";
