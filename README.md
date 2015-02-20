@@ -21,6 +21,10 @@ still a little unwieldy.
 - **IE 8 compatability testing**: I'm using Angular 1.3, which has
 [dropped support for IE 8](https://docs.angularjs.org/guide/ie). It may work fine,
 but certain things might be broken.
+- **Making certain blocks of code more modular**: Especially the validateStructure
+function in app/codeValidation.js is a bit gross, though it's heavily commented.
+Certain pieces of functionality could be separated out into separate functions
+to make the code more readily understandable.
 
 
 ## Known issues
@@ -29,6 +33,8 @@ If one of the <option> elemnts in the menu is added/removed, the <option> elemen
 following it in the <optgroup> get indented. I've tried removing all CSS and the
 problem persists. The display issue is not present in other browsers.
 
+---------------------------------------
+
 * When deciding among libraries to use, I typically look at documentation,
 development activity, and performance. Both Esprima and Acorn had adequate but
 not great documentation and are both under active development. According
@@ -36,4 +42,4 @@ to the test I ran on [Esprima's testing page](http://esprima.org/test/compare.ht
 Acorn was slightly but appreciably faster in most cases. Seeing as I was basically
 constructing a REPL, it's likely that the code parsing would be happening frequently,
 so performance was a huge concern. Both frameworks look quite adequate for the job,
-but this leaned me slightly in favor of Acorn to use in my implementation. 
+but this leaned me slightly in favor of Acorn to use in my implementation.
