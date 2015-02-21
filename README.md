@@ -13,7 +13,7 @@ immediate feedback on syntax errors
 using [recursive AngularJS templating in Sepalnote](https://github.com/liddiard/sepalnote/blob/master/notes/templates/include/note_major.html).
 - **Prevent nonsensical structure rule nesting**: Right now, the Program Structure
 setup will allow you to, for example, require nesting a variable declaration
-inside a variable declaration, which of course doesn't make sens.
+inside a variable declaration, which of course doesn't make sense.
 - **Store structure rules in a database**: Right now, they're stored in
 [a JSON file](https://github.com/liddiard/js-analyzer/blob/master/public/js/nodeObjects.json),
 which works fine since the rules shouldn't need to be updated frequently, but is
